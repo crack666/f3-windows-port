@@ -1,6 +1,7 @@
 # F3 - Fight Flash Fraud for Windows
 
 This is a Windows port of the popular F3 (Fight Flash Fraud) tool, which helps detect counterfeit flash drives and memory cards.
+![Windows Demo](https://github.com/user-attachments/assets/a2ac5203-10fc-4237-a413-c67b731efcab)
 
 ## Overview
 
