@@ -1,0 +1,19 @@
+# Build artifacts
+*.o
+*.obj
+*.d
+*.exe
+
+# Archives
+*.tar.gz
+*.zip
+
+# Temporary files
+*.tmp
+*.swp
+
+# Editor files
+.vscode/
+.idea/
+*.suo
+*.user
