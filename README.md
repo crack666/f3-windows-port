@@ -12,10 +12,48 @@ This Windows port includes three main tools:
 - **f3read**: Verifies test files written by f3write
 - **f3probe**: Directly probes the device at a hardware level (requires admin privileges)
 
-## Requirements
+## Pre-compiled Binaries
 
-- Windows 7/8/10/11
-- Administrator privileges (for f3probe)
+For convenience, you can download pre-compiled Windows binaries from the [Releases](https://github.com/crack666/f3-windows-port/releases) section of this repository.
+
+## Building from Source
+
+### Requirements
+
+- MinGW-w64 (for Windows builds)
+- GCC (for Linux/WSL builds)
+- Make
+
+### Building on Linux/WSL for Windows
+
+1. Clone the repository:
+   ```
+   git clone https://github.com/crack666/f3-windows-port.git
+   cd f3-windows-port
+   ```
+
+2. Run the build script:
+   ```
+   chmod +x build-win.sh
+   ./build-win.sh
+   ```
+
+3. The Windows executables (*.exe) will be created in the current directory.
+
+### Building Directly on Windows
+
+1. Install MinGW-w64:
+   - Download from [MinGW-w64](https://www.mingw-w64.org/downloads/) or install using [MSYS2](https://www.msys2.org/)
+   - Add MinGW bin directory to your PATH
+
+2. Clone the repository or download the source files
+
+3. Compile the source files:
+   ```
+   gcc -std=c99 -Wall -o f3write.exe f3write-win.c
+   gcc -std=c99 -Wall -o f3read.exe f3read-win.c
+   gcc -std=c99 -Wall -o f3probe.exe f3probe-win.c
+   ```
 
 ## Usage
 
@@ -54,6 +92,22 @@ f3probe.exe --destructive J:
 You can use the included batch files for easier testing:
 - `f3-test.bat J` - Runs f3write and f3read on drive J:
 - `f3probe-test.bat J` - Runs f3probe on drive J:
+
+## Creating a Release
+
+To create a release with pre-compiled binaries:
+
+1. Build the executables following the instructions above
+2. Create a ZIP archive containing:
+   - f3write.exe
+   - f3read.exe
+   - f3probe.exe
+   - f3-test.bat
+   - f3probe-test.bat
+   - README.md
+   - README_WINDOWS.txt
+
+3. Upload the ZIP file to the GitHub Releases section of this repository
 
 ## Limitations
 
